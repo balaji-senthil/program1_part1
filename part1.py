@@ -13,7 +13,7 @@ def printBoard(myBoard):
 
 
 # def possibleMoves(currentPosition,myBoard):
-#     for 
+#     for i 
 
 #testing output
 myBoard=loadBoard('board.txt')
