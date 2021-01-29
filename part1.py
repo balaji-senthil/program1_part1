@@ -33,7 +33,7 @@ def possibleMoves(currentPosition,myBoard):
 
     
 
-#testing output
+#testing output of part1
 myBoard=loadBoard('board.txt')
 printBoard(myBoard)
 pos=(0,0)#get user input
