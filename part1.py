@@ -56,7 +56,13 @@ def examineState(myBoard,currentPosition,path,myDict):
         wordList.append(myBoard[x][y])
     x, y = currentPosition
     wordList.append(myBoard[x][y])
-    print(wordList)
+    finalList = ''.join([str(i) for i in wordList])
+    print(finalList)
+    if finalList.lower() in myDict:
+        return (finalList.lower(),'Yes')
+    else:
+        return(finalList.lower(),'No')
+
 
 
     
@@ -73,8 +79,9 @@ print(legalMoves((possibleMoves(pos,myBoard)),pathArg))
 #         for word in mainDictionary:
 #             word.lower
 # print(examineState(myBoard,pos,((1,1),(1,0)),mainDictionary))
-myDict = "hiiis"
-examineState(myBoard,(0,0),((1,1),(1,0)), myDict)
+myDict = open('dictionary.txt').read()
+# print(examineState(myBoard,(0,0),((1,1),(1,0)), myDict))
+print(examineState(myBoard,(3,1),((0,1),(1,0),(1,1),(2,1)), myDict))
 
 
 
