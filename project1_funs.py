@@ -51,8 +51,8 @@ def possibleMoves(currentPosition,myBoard):
     
     if(x_co_ordinate<limit and ((y_co_ordinate-1<limit)and y_co_ordinate-1>=0)): #Bottom Up
         possibleMovesArray.append((x_co_ordinate,y_co_ordinate-1))
-    print(set(possibleMovesArray))
-    return(possibleMovesArray)
+    #print(set(possibleMovesArray))
+    return(set(possibleMovesArray))
     
 
 
@@ -61,7 +61,7 @@ def legalMoves(possibleMovesArg,pathArg):
     for pos in possibleMovesArg:    
         if pos not in legalMovesArray:  #checking for non-repetion of positions, to comply the rules of the game
             legalMovesArray.append(pos) 
-    return legalMovesArray
+    return(set(legalMovesArray))
    
 
 def examineState(myBoard,currentPosition,path,myDict):
