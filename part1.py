@@ -49,7 +49,14 @@ def legalMoves(possibleMovesArg,pathArg):
     # return legalMovesArray
 
 
-# def examineState(myBoard,currentPosition,path,myDict):
+def examineState(myBoard,currentPosition,path,myDict):
+    wordList = []
+    for i in path:
+        x, y = i
+        wordList.append(myBoard[x][y])
+    x, y = currentPosition
+    wordList.append(myBoard[x][y])
+    print(wordList)
 
 
     
@@ -66,6 +73,8 @@ print(legalMoves((possibleMoves(pos,myBoard)),pathArg))
 #         for word in mainDictionary:
 #             word.lower
 # print(examineState(myBoard,pos,((1,1),(1,0)),mainDictionary))
+myDict = "hiiis"
+examineState(myBoard,(0,0),((1,1),(1,0)), myDict)
 
 
 
