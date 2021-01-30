@@ -34,25 +34,39 @@ def possibleMoves(currentPosition,myBoard):
         possibleMovesArray.append((x_co_ordinate-1,y_co_ordinate))
     if(x_co_ordinate<limit and ((y_co_ordinate-1<limit)and y_co_ordinate-1>=0)):#Bottom Up
         possibleMovesArray.append((x_co_ordinate,y_co_ordinate-1))
-    return possibleMovesArray
+    return (possibleMovesArray)
 
-def legalMoves(posArg,randPos):
+def legalMoves(possibleMovesArg,pathArg):
     legalMovesArray=[]
-    set1=set((possibleMoves(posArg,randPos)))
-    set2=set(randPos)
-    legalMovesArray.append(set1.difference(set2))
+    for pos in possibleMovesArg:
+        if pos not in legalMovesArray:
+            legalMovesArray.append(pos)
     return legalMovesArray
+    # set1=set(posArg)
+    # set2=set(randPos)
+    # legalMovesArray.append(set1.difference(set2))
+    # # op=list(legalMovesArray)
+    # return legalMovesArray
+
+
+# def examineState(myBoard,currentPosition,path,myDict):
 
 
     
 #testing output of part1
+
 myBoard=loadBoard('board.txt')
 printBoard(myBoard)
 pos=(2,2)#get user input
-pm=possibleMoves(pos,myBoard)
-print(pm)
-# randArg=set({(0,0),(1,1),(2,2),(3,3)})
-# legalMoves(pm,randArg)
+# pm=possibleMoves(pos,myBoard)
+#print(pm)
+pathArg=((0,0),(1,1),(2,2),(3,3))
+print(legalMoves((possibleMoves(pos,myBoard)),pathArg))
+# mainDictionary=open('dictionary.txt').read()
+#         for word in mainDictionary:
+#             word.lower
+# print(examineState(myBoard,pos,((1,1),(1,0)),mainDictionary))
+
 
 
 
